@@ -82,6 +82,7 @@ public class Main extends JFrame {
 	}
 
 	/* Constructor. No need to modify */
+	// TODO: Identify features
 	public Main(String appTitle) {
 		super(appTitle);
 		init();
