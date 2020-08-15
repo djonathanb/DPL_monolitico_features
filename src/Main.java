@@ -31,10 +31,6 @@ public  class  Main  extends JFrame {
 	private Container contentPane;
 
 	
-	// TODO Line
-	private JButton lineButton;
-
-	
 	// TODO Rect
 	private JButton rectButton;
 
@@ -51,15 +47,9 @@ public  class  Main  extends JFrame {
 	private static final String rectText = "Retângulo";
 
 	
-	// TODO Line
-	private static final String lineText = "    Linha    ";
-
 	
-
 	// *** Initialization of atomic elements
 	public void initAtoms() {
-		// TODO Line
-		lineButton = new JButton(lineText);
 		// TODO Rect
 		rectButton = new JButton(rectText);
 		// TODO Wipe
@@ -81,8 +71,6 @@ public  class  Main  extends JFrame {
 
 	/** Initializes the content pane */
 	public void initContentPane() {
-		// TODO Line
-		toolPanel.add(lineButton);
 		// TODO Rect
 		toolPanel.add(rectButton);
 		// TODO Wipe
@@ -94,13 +82,6 @@ public  class  Main  extends JFrame {
 	
 
 	public void initListeners() {
-
-		// TODO Line
-		lineButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				canvas.selectedFigure(Canvas.FigureTypes.LINE);
-			}
-		});
 
 		// TODO Rect
 		rectButton.addActionListener(new ActionListener() {

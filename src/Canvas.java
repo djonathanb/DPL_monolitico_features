@@ -95,11 +95,6 @@ public  class  Canvas  extends JComponent  implements MouseListener, MouseMotion
 	
 	/** Invoked when a mouse button has been pressed on a component. */
 	public void mousePressed(MouseEvent e) {
-		// TODO Line
-		if (figureSelected == FigureTypes.LINE) {
-			mousePressedLine(e);
-		}
-		
 		// TODO Rect
 		if (figureSelected == FigureTypes.RECT) {
 			mousePressedRect(e);
@@ -113,10 +108,6 @@ public  class  Canvas  extends JComponent  implements MouseListener, MouseMotion
 
 	/** Invoked when a mouse button has been released on a component. */
 	public void mouseReleased(MouseEvent e) {
-		// TODO Line
-		if (figureSelected == FigureTypes.LINE) {
-			mouseReleasedLine(e);
-		}
 		// TODO Rect
 		if (figureSelected == FigureTypes.RECT) {
 			mouseReleasedRect(e);
@@ -127,10 +118,6 @@ public  class  Canvas  extends JComponent  implements MouseListener, MouseMotion
 
 	/** Invoked when the mouse is dragged over a component */
 	public void mouseDragged(MouseEvent e) {
-		// TODO Line
-		if (figureSelected == FigureTypes.LINE) {
-			mouseDraggedLine(e);
-		}
 		// TODO Rect
 		if (figureSelected == FigureTypes.RECT) {
 			mouseDraggedRect(e);
@@ -182,40 +169,6 @@ public  class  Canvas  extends JComponent  implements MouseListener, MouseMotion
 	/** Clears the reference to the new line */
 	public void mouseReleasedRect(MouseEvent e) {
 		newRect = null;
-	}
-
-	
-
-	// TODO Line
-	protected Line newLine = null;
-
-	
-
-	// TODO Line
-	public void mousePressedLine(MouseEvent e) {
-		// If there is no line being created
-		if (newLine == null) {
-			start = new Point(e.getX(), e.getY());
-			newLine = new Line(start);
-			shapes.add(newLine);
-		}
-	}
-
-	
-
-	// TODO Line
-	/** Updates the end point coordinates and repaints figure */
-	public void mouseDraggedLine(MouseEvent e) {
-		newLine.setEnd(new Point(e.getX(), e.getY()));
-		repaint();
-	}
-
-	
-
-	// TODO Line
-	/** Clears the reference to the new line */
-	public void mouseReleasedLine(MouseEvent e) {
-		newLine = null;
 	}
 
 
