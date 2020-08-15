@@ -20,19 +20,13 @@ public class Main extends JFrame {
 	protected JPanel toolPanel = new JPanel();
 	protected Canvas canvas = new Canvas();
 	private Container contentPane;
-	// TODO Rect
-	private JButton rectButton;
 	// TODO Wipe
 	private JButton wipeButton;
 	// TODO Wipe
 	private static final String wipeText = "   Limpar   ";
-	// TODO Rect
-	private static final String rectText = "Retângulo";
 	
 	// *** Initialization of atomic elements
 	public void initAtoms() {
-		// TODO Rect
-		rectButton = new JButton(rectText);
 		// TODO Wipe
 		wipeButton = new JButton(wipeText);
 	}
@@ -48,8 +42,6 @@ public class Main extends JFrame {
 
 	/** Initializes the content pane */
 	public void initContentPane() {
-		// TODO Rect
-		toolPanel.add(rectButton);
 		// TODO Wipe
 		toolPanel.add(wipeButton);
 		contentPane.add(toolPanel, BorderLayout.WEST);
@@ -57,13 +49,6 @@ public class Main extends JFrame {
 	}
 
 	public void initListeners() {
-
-		// TODO Rect
-		rectButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				canvas.selectedFigure(Canvas.FigureTypes.RECT);
-			}
-		});
 
 		// TODO Wipe
 		wipeButton.addActionListener(new ActionListener() {

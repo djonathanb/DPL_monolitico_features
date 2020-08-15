@@ -31,10 +31,6 @@ public  class  Main  extends JFrame {
 	private Container contentPane;
 
 	
-	// TODO Rect
-	private JButton rectButton;
-
-	
 	// TODO Wipe
 	private JButton wipeButton;
 
@@ -43,17 +39,29 @@ public  class  Main  extends JFrame {
 	private static final String wipeText = "   Limpar   ";
 
 	
-	// TODO Rect
-	private static final String rectText = "Retângulo";
+	
+	// *** Initialization of atomic elements
+	 private void  initAtoms__wrappee__Base  () {
+		// TODO Wipe
+		wipeButton = new JButton(wipeText);
+	}
 
 	
 	
 	// *** Initialization of atomic elements
-	public void initAtoms() {
-		// TODO Rect
+	 private void  initAtoms__wrappee__Rect  () {
 		rectButton = new JButton(rectText);
-		// TODO Wipe
-		wipeButton = new JButton(wipeText);
+		initAtoms__wrappee__Base();
+	}
+
+	
+
+	// *** Initialization of atomic elements
+	public void initAtoms() {
+
+		lineButton = new JButton(lineText);
+		initAtoms__wrappee__Rect();
+	
 	}
 
 	
@@ -70,9 +78,7 @@ public  class  Main  extends JFrame {
 	
 
 	/** Initializes the content pane */
-	public void initContentPane() {
-		// TODO Rect
-		toolPanel.add(rectButton);
+	 private void  initContentPane__wrappee__Base  () {
 		// TODO Wipe
 		toolPanel.add(wipeButton);
 		contentPane.add(toolPanel, BorderLayout.WEST);
@@ -81,14 +87,25 @@ public  class  Main  extends JFrame {
 
 	
 
-	public void initListeners() {
+	/** Initializes the content pane */
+	 private void  initContentPane__wrappee__Rect  () {
+		toolPanel.add(rectButton);
+		initContentPane__wrappee__Base();
+	}
 
-		// TODO Rect
-		rectButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				canvas.selectedFigure(Canvas.FigureTypes.RECT);
-			}
-		});
+	
+
+	/** Initializes the content pane */
+	public void initContentPane() {
+
+		toolPanel.add(lineButton);
+		initContentPane__wrappee__Rect();
+
+	}
+
+	
+
+	 private void  initListeners__wrappee__Base  () {
 
 		// TODO Wipe
 		wipeButton.addActionListener(new ActionListener() {
@@ -96,6 +113,32 @@ public  class  Main  extends JFrame {
 				canvas.wipe();
 			}
 		});
+	}
+
+	
+
+	 private void  initListeners__wrappee__Rect  () {
+
+		rectButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				canvas.selectedFigure(Canvas.FigureTypes.RECT);
+			}
+		});
+
+		initListeners__wrappee__Base();
+	}
+
+	
+
+	public void initListeners() {
+
+		lineButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				canvas.selectedFigure(Canvas.FigureTypes.LINE);
+			}
+		});
+		
+		initListeners__wrappee__Rect();
 	}
 
 	
@@ -132,6 +175,22 @@ public  class  Main  extends JFrame {
 	public static void main(String[] args) {
 		new Main("Draw Product Line");
 	}
+
+	
+
+	private JButton rectButton;
+
+	
+
+	private static final String rectText = "Retângulo";
+
+	
+	
+	private JButton lineButton;
+
+	
+
+	private static final String lineText = "    Linha    ";
 
 
 }

@@ -19,60 +19,51 @@ import java.awt.Point;
 
 @SuppressWarnings("serial")
 public class Canvas extends JComponent implements MouseListener, MouseMotionListener {
-
+	
 	private void configShapeFill(Graphics g) {
+		g.fillRect(0, 0, getWidth(), getHeight());
 	}
 	
 	/** Invoked when a mouse button has been pressed on a component. */
 	public void mousePressed(MouseEvent e) {
-		
-		if (figureSelected == FigureTypes.LINE) {
-			mousePressedLine(e);
+		if (figureSelected == FigureTypes.RECT) {
+			mousePressedRect(e);
 		}
-		
-		original(e);
-		
 	}
-	
-	
-	
 
 	/** Invoked when a mouse button has been released on a component. */
 	public void mouseReleased(MouseEvent e) {
-		if (figureSelected == FigureTypes.LINE) {
-			mouseReleasedLine(e);
+		if (figureSelected == FigureTypes.RECT) {
+			mouseReleasedRect(e);
 		}
-		original(e);
 	}
 
 	/** Invoked when the mouse is dragged over a component */
 	public void mouseDragged(MouseEvent e) {
-		if (figureSelected == FigureTypes.LINE) {
-			mouseDraggedLine(e);
+		if (figureSelected == FigureTypes.RECT) {
+			mouseDraggedRect(e);
 		}
-		original(e);
 	}
 
-	protected Line newLine = null;
+	protected BasicRectangle newRect = null;
 
-	public void mousePressedLine(MouseEvent e) {
+	public void mousePressedRect(MouseEvent e) {
 		// If there is no line being created
-		if (newLine == null) {
-			start = new Point(e.getX(), e.getY());
-			newLine = new Line(start);
-			shapes.add(newLine);
+		if (newRect == null) {
+			newRect = new BasicRectangle(e.getX(), e.getY());
+			shapes.add(newRect);
 		}
 	}
 
 	/** Updates the end point coordinates and repaints figure */
-	public void mouseDraggedLine(MouseEvent e) {
-		newLine.setEnd(new Point(e.getX(), e.getY()));
+	public void mouseDraggedRect(MouseEvent e) {
+		newRect.setEnd(e.getX(), e.getY());
 		repaint();
 	}
 
 	/** Clears the reference to the new line */
-	public void mouseReleasedLine(MouseEvent e) {
-		newLine = null;
+	public void mouseReleasedRect(MouseEvent e) {
+		newRect = null;
 	}
 
 }

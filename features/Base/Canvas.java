@@ -44,14 +44,26 @@ public class Canvas extends JComponent implements MouseListener, MouseMotionList
 
 		// refreshes the canvas
 		g.setColor(Color.WHITE);
-		// TODO Rect
-		g.fillRect(0, 0, getWidth(), getHeight());
+		configShapeFill(g);
 		
 		for (Shape s : shapes) {
 			s.paint(g);
 		}
 	}
 
+	/** Invoked when a mouse button has been pressed on a component. */
+	public void mousePressed(MouseEvent e) {
+	}
+
+	/** Invoked when a mouse button has been released on a component. */
+	public void mouseReleased(MouseEvent e) {
+	}
+
+	/** Invoked when the mouse is dragged over a component */
+	public void mouseDragged(MouseEvent e) {
+	}
+
+	
 	// **************** Mouse Handling
 	public void mouseClicked(MouseEvent e) {
 	}
@@ -66,37 +78,7 @@ public class Canvas extends JComponent implements MouseListener, MouseMotionList
 	 */
 	public void mouseExited(MouseEvent e) {
 	}
-
 	
-	
-	
-	/** Invoked when a mouse button has been pressed on a component. */
-	public void mousePressed(MouseEvent e) {
-		// TODO Rect
-		if (figureSelected == FigureTypes.RECT) {
-			mousePressedRect(e);
-		}
-	}
-	
-	
-	
-
-	/** Invoked when a mouse button has been released on a component. */
-	public void mouseReleased(MouseEvent e) {
-		// TODO Rect
-		if (figureSelected == FigureTypes.RECT) {
-			mouseReleasedRect(e);
-		}
-	}
-
-	/** Invoked when the mouse is dragged over a component */
-	public void mouseDragged(MouseEvent e) {
-		// TODO Rect
-		if (figureSelected == FigureTypes.RECT) {
-			mouseDraggedRect(e);
-		}
-	}
-
 	/* Empty implementation. Do not change. */
 	public void mouseMoved(MouseEvent e) {
 	}
@@ -105,31 +87,6 @@ public class Canvas extends JComponent implements MouseListener, MouseMotionList
 	public void wipe() {
 		this.shapes.clear();
 		this.repaint();
-	}
-
-	// TODO Rect
-	protected BasicRectangle newRect = null;
-
-	// TODO Rect
-	public void mousePressedRect(MouseEvent e) {
-		// If there is no line being created
-		if (newRect == null) {
-			newRect = new BasicRectangle(e.getX(), e.getY());
-			shapes.add(newRect);
-		}
-	}
-
-	// TODO Rect
-	/** Updates the end point coordinates and repaints figure */
-	public void mouseDraggedRect(MouseEvent e) {
-		newRect.setEnd(e.getX(), e.getY());
-		repaint();
-	}
-
-	// TODO Rect
-	/** Clears the reference to the new line */
-	public void mouseReleasedRect(MouseEvent e) {
-		newRect = null;
 	}
 
 }

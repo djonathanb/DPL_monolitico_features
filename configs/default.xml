@@ -5,5 +5,5 @@
 	<feature name="Wipe"/>
 	<feature automatic="selected" name="Shapes"/>
 	<feature manual="selected" name="Rect"/>
-	<feature name="Line"/>
+	<feature manual="selected" name="Line"/>
 </configuration>
