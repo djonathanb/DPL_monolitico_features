@@ -20,15 +20,9 @@ public class Main extends JFrame {
 	protected JPanel toolPanel = new JPanel();
 	protected Canvas canvas = new Canvas();
 	private Container contentPane;
-	// TODO Wipe
-	private JButton wipeButton;
-	// TODO Wipe
-	private static final String wipeText = "   Limpar   ";
 	
 	// *** Initialization of atomic elements
 	public void initAtoms() {
-		// TODO Wipe
-		wipeButton = new JButton(wipeText);
 	}
 
 	// Layout components declaration
@@ -42,20 +36,11 @@ public class Main extends JFrame {
 
 	/** Initializes the content pane */
 	public void initContentPane() {
-		// TODO Wipe
-		toolPanel.add(wipeButton);
 		contentPane.add(toolPanel, BorderLayout.WEST);
 		contentPane.add(canvas, BorderLayout.CENTER);
 	}
 
 	public void initListeners() {
-
-		// TODO Wipe
-		wipeButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				canvas.wipe();
-			}
-		});
 	}
 
 	// Initializes entire containment hierarchy

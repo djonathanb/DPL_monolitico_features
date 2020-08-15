@@ -20,7 +20,9 @@ import java.awt.Point;
 @SuppressWarnings("serial")
 public class Canvas extends JComponent implements MouseListener, MouseMotionListener {
 
-	public enum FigureTypes {NONE, LINE, RECT};
-	public FigureTypes figureSelected = FigureTypes.NONE;
+	public void wipe() {
+		this.shapes.clear();
+		this.repaint();
+	}
 
 }

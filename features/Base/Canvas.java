@@ -80,10 +80,4 @@ public class Canvas extends JComponent implements MouseListener, MouseMotionList
 	public void mouseMoved(MouseEvent e) {
 	}
 
-	// TODO Wipe
-	public void wipe() {
-		this.shapes.clear();
-		this.repaint();
-	}
-
 }

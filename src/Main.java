@@ -31,19 +31,17 @@ public  class  Main  extends JFrame {
 	private Container contentPane;
 
 	
-	// TODO Wipe
-	private JButton wipeButton;
-
 	
-	// TODO Wipe
-	private static final String wipeText = "   Limpar   ";
+	// *** Initialization of atomic elements
+	 private void  initAtoms__wrappee__Base  () {
+	}
 
 	
 	
 	// *** Initialization of atomic elements
-	 private void  initAtoms__wrappee__Base  () {
-		// TODO Wipe
+	 private void  initAtoms__wrappee__Wipe  () {
 		wipeButton = new JButton(wipeText);
+		initAtoms__wrappee__Base();
 	}
 
 	
@@ -51,7 +49,7 @@ public  class  Main  extends JFrame {
 	// *** Initialization of atomic elements
 	 private void  initAtoms__wrappee__Rect  () {
 		rectButton = new JButton(rectText);
-		initAtoms__wrappee__Base();
+		initAtoms__wrappee__Wipe();
 	}
 
 	
@@ -79,8 +77,6 @@ public  class  Main  extends JFrame {
 
 	/** Initializes the content pane */
 	 private void  initContentPane__wrappee__Base  () {
-		// TODO Wipe
-		toolPanel.add(wipeButton);
 		contentPane.add(toolPanel, BorderLayout.WEST);
 		contentPane.add(canvas, BorderLayout.CENTER);
 	}
@@ -88,9 +84,17 @@ public  class  Main  extends JFrame {
 	
 
 	/** Initializes the content pane */
+	 private void  initContentPane__wrappee__Wipe  () {
+		toolPanel.add(wipeButton);
+		initContentPane__wrappee__Base();
+	}
+
+	
+
+	/** Initializes the content pane */
 	 private void  initContentPane__wrappee__Rect  () {
 		toolPanel.add(rectButton);
-		initContentPane__wrappee__Base();
+		initContentPane__wrappee__Wipe();
 	}
 
 	
@@ -106,13 +110,19 @@ public  class  Main  extends JFrame {
 	
 
 	 private void  initListeners__wrappee__Base  () {
+	}
 
-		// TODO Wipe
+	
+
+	 private void  initListeners__wrappee__Wipe  () {
+
 		wipeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				canvas.wipe();
 			}
 		});
+		
+		initListeners__wrappee__Base();
 	}
 
 	
@@ -125,7 +135,7 @@ public  class  Main  extends JFrame {
 			}
 		});
 
-		initListeners__wrappee__Base();
+		initListeners__wrappee__Wipe();
 	}
 
 	
@@ -175,6 +185,14 @@ public  class  Main  extends JFrame {
 	public static void main(String[] args) {
 		new Main("Draw Product Line");
 	}
+
+	
+
+	private JButton wipeButton;
+
+	
+
+	private static final String wipeText = "   Limpar   ";
 
 	
 

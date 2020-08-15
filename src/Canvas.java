@@ -150,7 +150,6 @@ public  class  Canvas  extends JComponent  implements MouseListener, MouseMotion
 
 	
 
-	// TODO Wipe
 	public void wipe() {
 		this.shapes.clear();
 		this.repaint();
@@ -158,7 +157,6 @@ public  class  Canvas  extends JComponent  implements MouseListener, MouseMotion
 
 	
 
-	// TODO Shapes
 	public enum  FigureTypes {NONE ,  LINE ,  RECT}
 
 	;
