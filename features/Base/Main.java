@@ -52,7 +52,6 @@ public class Main extends JFrame {
 	}
 
 	/* Constructor. No need to modify */
-	// TODO Extract features
 	public Main(String appTitle) {
 		super(appTitle);
 		init();
