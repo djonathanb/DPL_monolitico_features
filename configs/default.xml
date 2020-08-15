@@ -2,7 +2,7 @@
 <configuration>
 	<feature automatic="selected" name="DPL_monolitico_features"/>
 	<feature automatic="selected" name="Base"/>
-	<feature name="Wipe"/>
+	<feature manual="selected" name="Wipe"/>
 	<feature automatic="selected" name="Shapes"/>
 	<feature manual="selected" name="Rect"/>
 	<feature manual="selected" name="Line"/>

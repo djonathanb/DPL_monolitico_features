@@ -22,10 +22,7 @@ public class Canvas extends JComponent implements MouseListener, MouseMotionList
 
 	Point start, end;
 	protected List<Shape> shapes = new LinkedList<Shape>();
-	// TODO Shapes
-	public enum FigureTypes {NONE, LINE, RECT};
-	public FigureTypes figureSelected = FigureTypes.NONE;
-
+	
 	/** Sets up the canvas. Do not change */
 	public Canvas() {
 		this.setDoubleBuffered(true); // for display efficiency
