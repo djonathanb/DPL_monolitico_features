@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
 	<struct>
 		<and abstract="true" mandatory="true" name="DPL_monolitico_features">
-			<feature name="Base"/>
+			<graphics key="collapsed" value="false"/>
+			<feature mandatory="true" name="Base"/>
+			<feature name="Wipe"/>
+			<or mandatory="true" name="Shapes">
+				<feature name="Rect"/>
+				<feature name="Line"/>
+			</or>
 		</and>
 	</struct>
 </featureModel>

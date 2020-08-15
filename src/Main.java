@@ -6,32 +6,55 @@
  * SEP SPL Course July 2010
  */
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.*; 
+import java.awt.*; 
+import java.awt.event.*; 
 
 @SuppressWarnings("serial")
 
-public class Main extends JFrame {
+public  class  Main  extends JFrame {
+	
 
 	private static final int WIDTH = 800;
+
+	
 	private static final int HEIGHT = 600;
 
+	
+
 	protected JPanel toolPanel = new JPanel();
+
+	
 	protected Canvas canvas = new Canvas();
+
+	
 	private Container contentPane;
+
+	
 	// TODO Line
 	private JButton lineButton;
+
+	
 	// TODO Rect
 	private JButton rectButton;
+
+	
 	// TODO Wipe
 	private JButton wipeButton;
+
+	
 	// TODO Wipe
 	private static final String wipeText = "   Limpar   ";
+
+	
 	// TODO Rect
 	private static final String rectText = "Retângulo";
+
+	
 	// TODO Line
 	private static final String lineText = "    Linha    ";
+
+	
 
 	// *** Initialization of atomic elements
 	public void initAtoms() {
@@ -43,6 +66,8 @@ public class Main extends JFrame {
 		wipeButton = new JButton(wipeText);
 	}
 
+	
+
 	// Layout components declaration
 
 	/** Initializes layout . No need to change */
@@ -51,6 +76,8 @@ public class Main extends JFrame {
 		contentPane.setLayout(new BorderLayout());
 		toolPanel.setLayout(new BoxLayout(toolPanel, BoxLayout.Y_AXIS));
 	}
+
+	
 
 	/** Initializes the content pane */
 	public void initContentPane() {
@@ -63,6 +90,8 @@ public class Main extends JFrame {
 		contentPane.add(toolPanel, BorderLayout.WEST);
 		contentPane.add(canvas, BorderLayout.CENTER);
 	}
+
+	
 
 	public void initListeners() {
 
@@ -88,6 +117,8 @@ public class Main extends JFrame {
 		});
 	}
 
+	
+
 	// Initializes entire containment hierarchy
 	public void init() {
 		initAtoms();
@@ -95,6 +126,8 @@ public class Main extends JFrame {
 		initContentPane();
 		initListeners();
 	}
+
+	
 
 	/* Constructor. No need to modify */
 	// TODO Extract features
@@ -112,9 +145,12 @@ public class Main extends JFrame {
 		validate();
 	}
 
+	
+
 	/** main method */
 	public static void main(String[] args) {
 		new Main("Draw Product Line");
 	}
+
 
 }
